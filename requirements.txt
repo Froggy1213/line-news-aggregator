@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+sqlalchemy
+asyncpg
+alembic
+pydantic-settings
+feedparser
+newspaper3k
+openai
+line-bot-sdk
+celery
+redis
+requests
