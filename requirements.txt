@@ -11,3 +11,4 @@ line-bot-sdk
 celery
 redis
 requests
+feedparser

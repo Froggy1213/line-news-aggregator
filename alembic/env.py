@@ -7,24 +7,18 @@ from sqlalchemy.ext.asyncio import async_engine_from_config
 
 from alembic import context
 
-# 1. Импортируем наши настройки и модели
 from app.config import settings
 from app.database import Base
-from app.models import NewsItem # Нужно импортировать хотя бы одну модель, чтобы Base о ней узнал
+from app.models import NewsItem
 
-# this is the Alembic Config object, which provides
-# access to the values within the .ini file in use.
 config = context.config
 
-# 2. Подставляем URL базы данных из нашего конфига
+
 config.set_main_option("sqlalchemy.url", settings.DATABASE_URL)
 
-# Interpret the config file for Python logging.
-# This line sets up loggers basically.
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
-# 3. Указываем метаданные наших моделей
 target_metadata = Base.metadata
 
 def run_migrations_offline() -> None:
