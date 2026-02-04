@@ -30,7 +30,8 @@ Designed with a modern "Environment First" approach using Docker and Python 3.11
 ```bash
 git clone [https://github.com/YOUR_USERNAME/line-news-aggregator.git](https://github.com/YOUR_USERNAME/line-news-aggregator.git)
 cd line-news-aggregator
-2. Configure Environment
+```
+### 2. Configure Environment
 Create a .env file in the root directory:
 
 Ini, TOML
@@ -40,13 +41,13 @@ PROJECT_NAME=LineNewsAggregator
 # LINE API Keys
 LINE_CHANNEL_SECRET=your_channel_secret
 LINE_CHANNEL_ACCESS_TOKEN=your_access_token
-3. Run with Docker
+### 3. Run with Docker
 Bash
 docker-compose up --build
-4. Apply Database Migrations
+### 4. Apply Database Migrations
 Initialize the database schema:
 
-Bash
+```bash
 docker-compose exec web alembic upgrade head
 🕷 Usage
 Check Health: Go to http://localhost:8000/health
@@ -54,9 +55,11 @@ Check Health: Go to http://localhost:8000/health
 Trigger Manual Crawl: Go to http://localhost:8000/crawl-and-save to fetch latest news and save them to PostgreSQL.
 
 LINE Bot: The bot listens for webhooks at /callback. (Requires ngrok or public IP for local testing).
+```
 
-📂 Project Structure
+# 📂 Project Structure
 Plaintext
+```bash
 .
 ├── app
 │   ├── main.py          # Entry point
@@ -68,3 +71,4 @@ Plaintext
 ├── alembic              # Migration scripts
 ├── docker-compose.yml
 └── requirements.txt
+```
